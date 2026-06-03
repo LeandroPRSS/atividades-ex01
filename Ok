@@ -1,0 +1,46 @@
+import java.util.Random;
+
+public class Exerc01 {
+
+    public static void main(String[] args) {
+
+        int[][] matriz = new int[4][4];
+
+        Random random = new Random();
+
+        for (int i = 0; i < matriz.length; i++) {
+            for (int l = 0; l < matriz[i].length; l++) {
+                matriz[i][l] = random.nextInt(10);
+            }
+        }
+
+        int maior = Integer.MIN_VALUE;
+        int linha = 0;
+        int coluna = 0;
+
+        // Verificando o maior número, a linha e a coluna
+        for (int i = 0; i < matriz.length; i++) {
+            for (int l = 0; l < matriz[i].length; l++) {
+
+                if (matriz[i][l] > maior) {
+                    maior = matriz[i][l];
+                    linha = i;
+                    coluna = l;
+                }
+            }
+        }
+
+        System.out.println("Matriz:");
+
+        for (int i = 0; i < matriz.length; i++) {
+            for (int l = 0; l < matriz[i].length; l++) {
+                System.out.print(matriz[i][l] + " ");
+            }
+            System.out.println();
+        }
+
+        System.out.println("\nMaior número: " + maior);
+        System.out.println("Linha: " + linha);
+        System.out.println("Coluna: " + coluna);
+    }
+}
